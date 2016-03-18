@@ -6,11 +6,11 @@ cd ~
 sudo apt-get update
 
 # 1. Install CUDA 7.5 (change url to current CUDA version if outdated)
-# echo INSTALLING CUDA
-# wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
-# sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
-# sudo apt-get update
-# sudo apt-get install cuda
+echo INSTALLING CUDA
+wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+sudo apt-get update
+sudo apt-get -y install cuda
 
 # 2. Install torch
 echo INSTALLING TORCH
@@ -21,12 +21,12 @@ bash ./install.sh
 source ~/.bashrc
 
 # 3. Install loadcaffe
-# sudo apt-get install libprotobuf-dev protobuf-compiler
-# luarocks install loadcaffe
+sudo apt-get -y install libprotobuf-dev protobuf-compiler
+luarocks install loadcaffe
 
 # 4. Install CUDA backend for torch
-# luarocks install cutorch
-# luarocks install cunn
+luarocks install cutorch
+luarocks install cunn
 
 # 5. Install cuDNN (update this url for newer versions)
 # cd ~
